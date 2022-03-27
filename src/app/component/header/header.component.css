@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70px;
+    background-color: rgb(138, 140, 143);
+}
+
+.header-title, .header-else{
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    font-size: 20px;
+    align-items: center;
+} 
+
+.first-word {
+    color: rgb(190, 235, 131);
+}
+
+.second-word {
+    color: rgb(233, 228, 167);
+}
+
+.header-else__ete {
+    color: burlywood;
+    padding: 0 20px;
+    cursor: pointer;
+}

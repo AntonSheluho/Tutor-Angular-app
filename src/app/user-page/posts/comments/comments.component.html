@@ -1,0 +1,4 @@
+<div *ngFor="let comment of comments; let i = index">
+    <h3>{{ i + 1 }}. {{ comment.name }}</h3>
+    <p>{{ comment.body }}</p>
+</div>

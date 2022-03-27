@@ -1,0 +1,13 @@
+.container {
+    width: 1300px;
+}
+
+.content {
+    width: 100%;
+    min-height: 500px;
+    height: auto;
+    background: rgb(231, 231, 231);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

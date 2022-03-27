@@ -1,0 +1,26 @@
+<div class="main-wrapper">
+    <div class="info">
+        <div class="info__avatar"></div>
+        <div class="info__menu">
+            <nav>
+                <!-- <a [routerLink]="[{ outlets: {posts: ['crisis-center']}}]" routerLinkActive="active">Posts</a> -->
+                <a routerLink="posts" routerLinkActive="active">Posts</a>
+                <a routerLink="comments" routerLinkActive="active">Comments</a>
+                <a routerLink="albums" routerLinkActive="active">Albums</a>
+                <a routerLink="photos" routerLinkActive="active">Photos</a>
+                <a routerLink="todos" routerLinkActive="active">Todos</a>
+                <a routerLink="users" routerLinkActive="active">Users</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="lent">
+        <!-- <div>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </div> -->
+          <!-- <div>
+            <mat-progress-spinner [mode]="'indeterminate'"></mat-progress-spinner>
+          </div> -->
+        <router-outlet></router-outlet>
+    </div>
+</div>

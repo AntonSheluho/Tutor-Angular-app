@@ -1,0 +1,10 @@
+<div class="header">
+    <div class="header-title">
+        <div class="first-word">Heroes</div>
+        <div class="second-word">Tutor</div>
+        <div *ngIf="array.mark" [ngStyle]="{paddingLeft: '20px', color: 'burlywood'}">&#169; 2022</div>
+    </div>
+    <div class="header-else" >
+        <div class="header-else__ete" *ngFor="let el of array.array">{{ el }}</div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<div *ngFor="let user of users; let i = index">
+    <h3>{{ i + 1 }}. {{ user.Name }}</h3>
+    <p>UserName: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+    <div>Address: <pre>{{ user.address | json }}</pre> </div>
+</div>

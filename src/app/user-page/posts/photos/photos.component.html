@@ -1,0 +1,9 @@
+<div *ngFor="let photo of photos; let i = index">
+    <h3>{{ i + 1 }}. {{ photo.title }}</h3>
+    <h4>Url:
+        <img src="{{ photo.url }}" alt="photo1">
+    </h4>
+    <h4>ThumbnailUrl: 
+        <img src="{{ photo.thumbnailUrl }}" alt="photo2">
+    </h4>
+</div>

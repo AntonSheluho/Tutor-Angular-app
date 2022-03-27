@@ -1,0 +1,22 @@
+.my__button {
+    width: auto;
+    height: 40px;
+    margin: 0 15px;
+    border: none;
+    border-radius: 5px;
+    color: azure;
+}
+
+.primary {
+    background-color: blue;
+}
+
+.primary:hover {box-shadow: 0 0 4px 4px rgba(0, 0, 255, 0.493);}
+.primary:active {box-shadow: 0 0 2px 2px rgba(0, 0, 255, 0.493);}
+
+.success {
+    background-color: green;
+}
+
+.success:hover {box-shadow: 0 0 4px 4px rgba(0, 128, 0, 0.513);}
+.success:active {box-shadow: 0 0 2px 2px rgba(0, 128, 0, 0.513);}
