@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private heroesService: HeroesService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.headerArr = this.heroesService.getHeaderArray();

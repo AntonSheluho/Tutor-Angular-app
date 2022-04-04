@@ -1,7 +1,9 @@
+import { registrationAction } from './../store/actions/register.action';
 import { RegistrationUsersService } from './../registration-users.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-registration',
@@ -9,49 +11,40 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  public form!: FormGroup;
   public usersArr: any;
   public eyeSrcOpen: string = "http://localhost:4200/assets/eye-solid.svg";
   public eyeSrcClose: string = "http://localhost:4200/assets/eye-slash-solid.svg";
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private users: RegistrationUsersService,
+    private store: Store,
     public router: Router
   ) { }
 
   ngOnInit(): void {
     this.usersArr = this.users.getUsers();
+    this.formBuild()
   }
 
-  public form = this.fb.group({
-    firstName: [''],
-    lastName: [''],
-    userName: [''],
-    city: [''],
-    password: [''],
-    passRepeat: [''],
-    agree: [false],
-  }, Validators.required)
+  formBuild() {
+    this.form = this.fb.group({
+      firstName: [''],
+      lastName: [''],
+      userName: [''],
+      city: [''],
+      password: [''],
+      passRepeat: [''],
+      agree: [false],
+    })
+  }
+
+
 
   onSubmit() {
-    if(!this.checkUserName()){
-      this.users.addUser(this.form.value);
-      console.log(this.usersArr)
-      this.router.navigate(['entrance']);
-    } else {
-
-    }
-  }
-
-  checkUserName() {
-    let acc = false;
-    for(let obj of this.usersArr) {
-      if (obj.userName === this.form.value.userName) {
-        acc = true;
-        return acc
-      }
-    }
-    return acc
+    this.store.dispatch(registrationAction(this.form.value))
+    // this.router.navigate(['entrance']);
   }
 
   changeEye(img: HTMLImageElement, input: HTMLInputElement) {

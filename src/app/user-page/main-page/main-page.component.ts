@@ -14,7 +14,7 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroesService.getAvatars()
-    .subscribe(res => this.posts = res);
+      .subscribe(res => this.posts = res);
   }
 
 }

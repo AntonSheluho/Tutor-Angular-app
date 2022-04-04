@@ -1,65 +1,220 @@
-<div  [ngStyle]="{padding: '40px'}">
-    <form class="row g-3 needs-validation" (ngSubmit)="onSubmit()" [formGroup]="form" novalidate>
+<div [ngStyle]="{ padding: '40px' }">
+    <div class="container">
+        <form class="form-group" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <fieldset>
+                <fieldset class="form-group">
+                    <label class="form-label">First name</label>
+                    <input
+                        type="text"
+                        formControlName="firstName"
+                        placeholder="Your first name"
+                        class="form-control"
+                    />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label class="form-label">Last name</label>
+                    <input
+                        type="text"
+                        formControlName="lastName"
+                        placeholder="Your last name"
+                        class="form-control"
+                    />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label class="form-label">User name</label>
+                    <input
+                        type="text"
+                        formControlName="userName"
+                        placeholder="Your user name"
+                        class="form-control"
+                    />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label class="form-label">Where are you from</label>
+                    <input
+                        type="text"
+                        formControlName="city"
+                        placeholder="Your city"
+                        class="form-control"
+                    />
+                </fieldset>
+                <fieldset class="form-group pass__input">
+                    <label class="form-label">Password</label>
+                    <input
+                        type="password"
+                        #refInp1
+                        formControlName="password"
+                        class="form-control"
+                    />
+                    <div
+                        (click)="changeEye(refImg1, refInp1)"
+                        class="input-group-prepend eye"
+                    >
+                        <div class="input-group-text">
+                            <span class="text-dark" id="icon-click">
+                                <img
+                                    #refImg1
+                                    src="../../../assets/eye-solid.svg"
+                                    class="fa-solid fa-eye"
+                                />
+                            </span>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group pass__input">
+                    <label class="form-label">Repeat password</label>
+                    <input
+                        #refInp2
+                        type="password"
+                        formControlName="passRepeat"
+                        class="form-control"
+                    />
+                    <div
+                        (click)="changeEye(refImg2, refInp2)"
+                        class="input-group-prepend eye"
+                    >
+                        <div class="input-group-text">
+                            <span class="text-dark" id="icon-click">
+                                <img
+                                    #refImg2
+                                    src="../../../assets/eye-solid.svg"
+                                    class="fa-solid fa-eye"
+                                />
+                            </span>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label class="form-check-label"
+                        >Agree to terms and conditions</label
+                    >
+                    <input
+                        type="checkbox"
+                        formControlName="agree"
+                        placeholder="Your last name"
+                        class="form-check"
+                    />
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Enjoin</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!-- <div [ngStyle]="{ padding: '40px' }">
+    <form
+        class="row g-3 needs-validation"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="form"
+        novalidate
+    >
         <div class="col-md-4">
-          <label for="validationCustom01" class="form-label">First name</label>
-          <input type="text" formControlName="firstName" class="form-control" id="validationCustom01" placeholder="Mark" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+            <label for="validationCustom01" class="form-label"
+                >First name</label
+            >
+            <input
+                type="text"
+                formControlName="firstName"
+                class="form-control"
+                id="validationCustom01"
+                placeholder="Mark"
+                required
+            />
+            <div class="valid-feedback">Looks good!</div>
         </div>
         <div class="col-md-4">
-          <label for="validationCustom02" class="form-label">Last name</label>
-          <input type="text" formControlName="lastName" class="form-control" id="validationCustom02" placeholder="Otto" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+            <label for="validationCustom02" class="form-label">Last name</label>
+            <input
+                type="text"
+                formControlName="lastName"
+                class="form-control"
+                id="validationCustom02"
+                placeholder="Otto"
+                required
+            />
+            <div class="valid-feedback">Looks good!</div>
         </div>
         <div class="col-md-4">
-          <label for="validationCustomUsername" class="form-label">Username</label>
-          <div class="input-group has-validation">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
-            <input type="text" class="form-control" formControlName="userName" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-            <div class="invalid-feedback">
-              Please choose a username.
+            <label for="validationCustomUsername" class="form-label"
+                >Username</label
+            >
+            <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input
+                    type="text"
+                    class="form-control"
+                    formControlName="userName"
+                    id="validationCustomUsername"
+                    aria-describedby="inputGroupPrepend"
+                    required
+                />
+                <div class="invalid-feedback">Please choose a username.</div>
             </div>
-          </div>
         </div>
         <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">City</label>
-          <input type="text" class="form-control" formControlName="city" id="validationCustom03" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
+            <label for="validationCustom03" class="form-label">City</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="city"
+                id="validationCustom03"
+                required
+            />
+            <div class="invalid-feedback">Please provide a valid city.</div>
         </div>
         <div class="pass">
-          <label for="pass" class="pass__label">Password</label>
-          <div class="pass__input">
-            <input #refInp1 type="password" formControlName="password" class="input" required>
-            <div (click)="changeEye(refImg1, refInp1)" class="input-group-prepend eye">
-              <div class="input-group-text">
-                <span class="text-dark" id="icon-click">
-                  <img #refImg1 src="../../../assets/eye-solid.svg" class="fa-solid fa-eye">
-                </span>
-              </div>
+            <label for="pass" class="pass__label">Password</label>
+            <div class="pass__input">
+                <input
+                    #refInp1
+                    type="password"
+                    formControlName="password"
+                    class="input"
+                    required
+                />
+                <div
+                    (click)="changeEye(refImg1, refInp1)"
+                    class="input-group-prepend eye"
+                >
+                    <div class="input-group-text">
+                        <span class="text-dark" id="icon-click">
+                            <img
+                                #refImg1
+                                src="../../../assets/eye-solid.svg"
+                                class="fa-solid fa-eye"
+                            />
+                        </span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
         <div class="pass">
-          <label for="pass" class="pass__label">Repeat password</label>
-          <div class="pass__input">
-            <input #refInp2 type="password" formControlName="passRepeat" class="input" required>
-            <div (click)="changeEye(refImg2, refInp2)" class="input-group-prepend eye">
-              <div class="input-group-text">
-                <span class="text-dark" id="icon-click">
-                  <img #refImg2 src="../../../assets/eye-solid.svg" class="fa-solid fa-eye">
-                </span>
-              </div>
+            <label for="pass" class="pass__label">Repeat password</label>
+            <div class="pass__input">
+                <input
+                    #refInp2
+                    type="password"
+                    formControlName="passRepeat"
+                    class="input"
+                    required
+                />
+                <div
+                    (click)="changeEye(refImg2, refInp2)"
+                    class="input-group-prepend eye"
+                >
+                    <div class="input-group-text">
+                        <span class="text-dark" id="icon-click">
+                            <img
+                                #refImg2
+                                src="../../../assets/eye-solid.svg"
+                                class="fa-solid fa-eye"
+                            />
+                        </span>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-       
-        
-        <!-- <div class="col-12">
+        </div> -->
+
+<!-- <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" formControlName="password" #check type="password" value=""  required>
             <label class="form-check-label" for="invalidCheck">
@@ -81,22 +236,34 @@
             </div>
           </div>
         </div> -->
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" formControlName="agree" type="checkbox"  id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">
-              Agree to terms and conditions
-            </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
+<!-- <div class="col-12">
+            <div class="form-check">
+                <input
+                    class="form-check-input"
+                    formControlName="agree"
+                    type="checkbox"
+                    id="invalidCheck"
+                    required
+                />
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
             </div>
-          </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Enjoin</button>
+            <button
+                class="btn btn-primary"
+                type="submit"
+                [disabled]="!form.valid"
+            >
+                Enjoin
+            </button>
         </div>
-    </form>
-    <!-- <form class="row g-3" [formGroup]="form">
+    </form> -->
+<!-- <form class="row g-3" [formGroup]="form">
       <div class="col-md-4">
         <label for="validationServer01" class="form-label">First name</label>
         <input type="text" formControlName="firstName" class="form-control is-valid" id="validationServer01" required>
@@ -143,4 +310,4 @@
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
     </form> -->
-</div>
+<!-- </div> -->
