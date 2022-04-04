@@ -1,3 +1,4 @@
+import { RegistrationUsersService } from './component/registration-users.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,10 +14,7 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { UserPageModule } from './user-page/user-page.module';
 import { MyButtonComponent } from './UI/my-button/my-button.component';
 import { MyInputComponent } from './UI/my-input/my-input.component';
-// import { MatProgressBarModule } from '@angular/material/progress-bar';
-// import { MatToolbarModule } from '@angular/material/toolbar';
-// import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-// import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,20 +25,16 @@ import { MyInputComponent } from './UI/my-input/my-input.component';
     RegistrationComponent,
     PageNotFoundComponent,
     MyButtonComponent,
-    MyInputComponent
+    MyInputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserPageModule,
     HttpClientModule,
-    // MatToolbarModule,
-    // MatProgressSpinnerModule,
-    // MatButtonModule,
-    // MatProgressBarModule,
-    
+    ReactiveFormsModule,    
   ],
-  providers: [HeroesService],
+  providers: [HeroesService, RegistrationUsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

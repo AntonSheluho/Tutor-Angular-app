@@ -10,18 +10,18 @@
         <button class="btn btn-primary">Registration</button>
     </div>
 </div> -->
-<form>
+<form [formGroup]="userDataForEntrance">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <input type="password" class="form-control" formControlName="pass" id="exampleInputPassword1">
     </div>
     <div class="mb-3 entrance__btn">
-        <app-my-button [type]="'submit'" [color]="'success'">Sing in</app-my-button>
-        <app-my-button [type]="'submit'" [color]="'primary'">Registration</app-my-button>
+        <app-my-button (click)="redirectToEnt()" [type]="'submit'" [color]="'success'">Sing in</app-my-button>
+        <app-my-button (click)="redirectToReg()" [type]="'submit'" [color]="'primary'">Registration</app-my-button>
     </div>
   </form>
